@@ -60,25 +60,26 @@ double count_Mathematical_Expectation(int counts, double array[], int *differ_nu
     double result = 0;
     int j = 0, k = 0;
     int array_num = 0;
-
+    
+    printf("counts num = %d\n\r", counts);
+    
     for (i = 0; i < counts; ++i)// ¼ÆËã¸ÅÂÊ
     {
-        int nav_counted = 0;
         int nav_num = 0;
+        int exist = 0;
 
         nav = array[i];
 
         for (k = 0; k < array_num; k++)
         {
             if (nav == gnav_20170117_ps[k].nav)
-            {
-                nav_counted = 1;
+            {/* already count ps */
+                exist =1;
                 break;
             }
         }
 
-        if (nav_counted)
-        {
+        if (exist) {
             continue;
         }
 
